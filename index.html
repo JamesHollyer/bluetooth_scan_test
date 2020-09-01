@@ -1,0 +1,17 @@
+<html>
+    <span>device name: </span><input id="name" type="text"/>
+    <div id="name_scan">scan with name filter</div>
+    <script>
+        let name_input = document.getElementById("name");
+        let name_scan = document.getElementById("name_scan");
+        let name = "";
+
+        name_scan.addEventListener("click", () => {
+            let name = name_input.value;
+            console.log("name", name);
+            if(name)
+                navigator.bluetooth.requestDevice({filters:[{"name":name}]});
+            else navigator.bluetooth.requestDevice({acceptAllDevices:true});
+        })
+    </script>
+</html>
