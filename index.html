@@ -10,7 +10,7 @@
             let name = name_input.value;
             console.log("name", name);
             if(name)
-                navigator.bluetooth.requestDevice({filters:[{"namePrefix":name}]});
+                navigator.bluetooth.requestDevice({filters:[{"namePrefix":name}, {"name":"asdf"}]});
             else navigator.bluetooth.requestDevice({acceptAllDevices:true});
         })
     </script>
